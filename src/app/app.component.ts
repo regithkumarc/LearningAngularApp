@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LearningAngularApp';
+  updateTitle = "empty";
+
+  buttonClick() {
+    this.updateTitle = "updated";
+  }
 }
