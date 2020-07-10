@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms'
+import { ParentModule1Module } from './parent-module1/parent-module1.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,11 @@ import { FormsModule } from '@angular/forms'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ParentModule1Module
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [LoginComponent],
+  exports:[LoginComponent]
 })
 export class AppModule { }
