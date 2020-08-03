@@ -1,0 +1,179 @@
+<div>
+    <h1>Directives Example</h1>
+  
+    <!-- <div *ngIf="users">
+      Valid Users 
+    </div> &nbsp; -->
+  
+    <!-- <div *ngIf="userDetails">
+        <div *ngFor="let user of userDetails">
+          <div [ngSwitch] ="user.gender">
+              <div *ngSwitchCase = "'m'" class="maleBox">
+                  {{user.name}}
+              </div>
+              <div *ngSwitchCase = "'f'" class="femaleBox">
+                {{user.name}}
+              </div>
+          </div>
+        </div>
+    </div> -->
+    
+    <!-- <div *ngIf="userDetails; then userFoundTemplate; else noUserTemplate">
+      
+    </div>
+  
+    <ng-template #userFoundTemplate>
+      <div *ngFor="let user of userDetails">
+        <div [ngSwitch] = "user.gender">
+            <div *ngSwitchCase = "'m'" class="maleBox">
+                {{user.name}}
+            </div>
+            <div *ngSwitchCase = "'f'" class="femaleBox">
+              {{user.name}}
+            </div>
+            <div *ngSwitchDefault class="empty">
+              {{user.name}}
+            </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #noUserTemplate>
+      No User found
+    </ng-template>
+  </div> -->
+  
+  <!-- <div *ngIf="userDetails; then userFoundTemplate; else noUserTemplate">
+      
+  </div>
+  
+  <ng-template #userFoundTemplate>
+    <ng-template ngFor [ngForOf]="userDetails" let-user>
+      <div [ngSwitch] = "user.gender">
+          <div *ngSwitchCase = "'m'" class="maleBox">
+              {{user.name}}
+          </div>
+          <div *ngSwitchCase = "'f'" class="femaleBox">
+            {{user.name}}
+          </div>
+          <div *ngSwitchDefault class="empty">
+            {{user.name}}
+          </div>
+      </div>
+    </ng-template>
+  </ng-template>
+  
+  <ng-template #noUserTemplate>
+    No User found
+  </ng-template> -->
+  
+  <!-- <div *ngIf="userDetails; then userFoundTemplate; else noUserTemplate">
+      
+  </div>
+  
+  <ng-template #userFoundTemplate>
+    <div *ngFor="let user of userDetails; index as i;">
+      <div [ngSwitch] = "user.gender">
+          <div *ngSwitchCase = "'m'" class="maleBox">
+              {{i}} &nbsp;{{user.name}}
+          </div>
+          <div *ngSwitchCase = "'f'" class="femaleBox">
+              {{i}} &nbsp; {{user.name}}
+          </div>
+          <div *ngSwitchDefault class="empty">
+            {{i}} &nbsp;{{user.name}}
+          </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  <ng-template #noUserTemplate>
+    No User found
+  </ng-template> -->
+  
+  
+  <!-- <div *ngIf="userDetails; then userFoundTemplate; else noUserTemplate">
+      
+  </div>
+  
+  <ng-template #userFoundTemplate>
+    <div *ngFor="let user of userDetails; index as i; first as isFirst; last as isLast">
+      <div [ngSwitch] = "user.gender">
+          <div *ngSwitchCase = "'m'" class="maleBox">
+              {{i}} &nbsp; {{isFirst}} &nbsp;{{user.name}}
+          </div>
+          <div *ngSwitchCase = "'f'" class="femaleBox">
+              {{i}} &nbsp; {{isFirst}} &nbsp; {{user.name}}
+          </div>
+          <div *ngSwitchDefault class="empty">
+            {{i}} &nbsp; {{isLast}} &nbsp;{{user.name}}
+          </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  <ng-template #noUserTemplate>
+    No User found
+  </ng-template> -->
+  
+  <!-- <button (click)="orderChange()">Change Order</button>
+  <div *ngIf="userDetails; then userFoundTemplate; else noUserTemplate">
+      
+  </div>
+  <ng-template #userFoundTemplate>
+    <div *ngFor="let user of userDetails; 
+                index as i; 
+                first as isFirst; 
+                last as isLast;
+                even as evenNumber;
+                odd as oddNumber;
+                trackBy getName;">
+      <div [ngSwitch] = "user.gender">
+          <div *ngSwitchCase = "'m'" class="maleBox">
+              Index : {{i}} &nbsp; OddNumber : {{oddNumber}} &nbsp; Even Number : {{evenNumber}} &nbsp; IsFirst : {{isFirst}} &nbsp; Name : {{user.name}}
+          </div>
+          <div *ngSwitchCase = "'f'" class="femaleBox">
+              Index : {{i}} &nbsp; OddNumber : {{oddNumber}} &nbsp; Even Number : {{evenNumber}} &nbsp; IsFirst : {{isFirst}} &nbsp; Name : {{user.name}}
+          </div>
+          <div *ngSwitchDefault class="empty">
+              Index : {{i}} &nbsp; OddNumber : {{oddNumber}} &nbsp; Even Number : {{evenNumber}} &nbsp; IsFirst : {{isLast}} &nbsp; Name : {{user.name}}
+          </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  <ng-template #noUserTemplate>
+    No User found
+  </ng-template> -->
+  
+  
+  <!-- <button (click)="orderChange()">Change Order</button>
+  <ng-template [ngIf]="userDetails" [ngIfThen]="userFoundTemplate" [ngIfElse]="noUserTemplate">
+      
+  </ng-template>
+  <ng-template #userFoundTemplate>
+    <ng-template ngFor [ngForOf]="userDetails" let-user
+                let-index="i"; 
+                let-first="isFirst" 
+                let-last="isLast"
+                let-even="evenNumber"
+                let-odd="oddNumber";
+                [ngForTrackBy]="getName">
+      <div [ngSwitch] = "user.gender">
+          <div *ngSwitchCase = "'m'" class="maleBox">
+              Index : {{i}} &nbsp; OddNumber : {{oddNumber}} &nbsp; Even Number : {{evenNumber}} &nbsp; IsFirst : {{isFirst}} &nbsp; Name : {{user.name}}
+          </div>
+          <div *ngSwitchCase = "'f'" class="femaleBox">
+              Index : {{i}} &nbsp; OddNumber : {{oddNumber}} &nbsp; Even Number : {{evenNumber}} &nbsp; IsFirst : {{isFirst}} &nbsp; Name : {{user.name}}
+          </div>
+          <div *ngSwitchDefault class="empty">
+              Index : {{i}} &nbsp; OddNumber : {{oddNumber}} &nbsp; Even Number : {{evenNumber}} &nbsp; IsFirst : {{isLast}} &nbsp; Name : {{user.name}}
+          </div>
+      </div>
+    </ng-template>
+  </ng-template>
+  
+  <ng-template #noUserTemplate>
+    No User found
+  </ng-template> -->
+  
+  </div>

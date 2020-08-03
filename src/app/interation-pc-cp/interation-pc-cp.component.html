@@ -1,0 +1,10 @@
+<div>
+    <p>interation-pc-cp works!</p>
+    <app-hello firstName = "{{firstName}}" 
+                lastName = "{{lastName}}"
+                (sendData) = "receivedData($event)"
+                [testMethod] = "receivedData"></app-hello>
+
+                <p>{{childToParent}}</p>
+</div>
+
